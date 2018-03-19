@@ -13,3 +13,164 @@
  *= require_tree .
  *= require_self
  */
+*{
+  font-family: Rubik;
+  color: white;
+}
+      /* ============== */
+      /* === navbar === */
+      /* ============== */
+
+.navbar {
+  background-color: #233c4f;
+  padding-bottom: 10px;
+}
+
+.icon-bar{
+  background-color: white;
+}
+
+
+.navbar li a {
+  color: white;
+}
+
+.navbar li a:link {
+  text-decoration: none;
+}
+
+.navbar li a:hover {
+  background-color: #233c4f;
+  color: #84e1da;
+}
+
+.navbar .main-link a:hover  {
+  background-color: #233c4f;
+  color: #84e1da;
+}
+
+.dropdown-menu li {
+  color: #a7b1b9;
+  font-size: 9px;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.dropdown-menu li a {
+  color: #84e1da;
+  font-size: 14px;
+}
+
+.dropdown-menu li a:hover {
+  background-color: white;
+}
+
+
+      /* ============== */
+      /* === footer === */
+      /* ============== */
+ footer {
+   background-color: #233c4f;
+   padding: 20px;
+ }
+
+.footer-content{
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+ }
+
+ul {
+  list-style-type: none;
+}
+
+ul li {
+  padding-bottom: 10px;
+}
+
+.footer-title{
+  color: #a7b1b9;
+  font-size: 9px;
+}
+
+.links a {
+  color: white;
+}
+
+.links a:link {
+  text-decoration: none;
+}
+
+.links a:hover {
+  color: #84e1da;
+}
+
+.bottom {
+  margin-top: 20px;
+  margin-left: -50px
+}
+
+.bottom li {
+  display: inline;
+  padding: 0 8px;
+  border-right: 1px solid white;
+  font-size: 10px;
+}
+
+.bottom li:last-child {
+  border: none;
+}
+
+.side {
+  margin-right: 20px;
+}
+
+  /* === form === */
+form .form-boxes{
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.form-title{
+  display: inline-flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.title-box{
+  padding-left: 10px;
+}
+
+.box-borders{
+  border-radius: 0px;
+  border: none;
+}
+
+form .btn {
+  background-color: #5ea2b1;
+  color: white;
+}
+
+.anchor {
+  margin-right: 10px;
+}
+
+.media {
+  display: inline-flex;
+}
+
+.media li {
+  padding: 10px;
+}
+
+.media li .image-off {
+  display: none;
+}
+
+.media li:hover .image-on{
+   display: none;
+}
+.media li:hover .image-off{
+   display:block;
+}

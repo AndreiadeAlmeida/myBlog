@@ -12,4 +12,19 @@
 //
 //= require rails-ujs
 //= require turbolinks
+//= require jquery3
 //= require_tree .
+
+
+$(document).ready(function(){
+    $(".dropdown").hover(
+        function() {
+            $('.dropdown-menu', this).stop( true, true ).slideDown("fast");
+            $(this).toggleClass('open');
+          },
+        function() {
+            $('.dropdown-menu', this).stop( true, true ).slideUp("fast");
+            $(this).toggleClass('open');
+          }
+    );
+});//nav

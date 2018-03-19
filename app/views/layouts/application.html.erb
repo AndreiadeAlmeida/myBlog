@@ -1,14 +1,165 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>MyBlog</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>MyBlog</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli|Rubik" rel="stylesheet">
 
-  <body>
-    <%= yield %>
-  </body>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+  <!-- ========== -->
+  <!-- ==navbar== -->
+  <!-- ========== -->
+  <nav class="navbar navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-head">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="navbar-brand">
+          <%= link_to "https://careerfoundry.com/en/home" do %>
+          <%= image_tag "careerfoundry.png", class: "hidden-xs hidden-sm" %>
+          <%= image_tag "cf.png", class: "visible-xs visible-sm" %>
+          <% end %>
+        </div><!-- navbar-brand -->
+
+      </div><!--navbar-head-->
+
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="dropdown main-link"><a class="dropdown-toggle" data-toggle="dropdown" href="#"> Courses <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li>COURSES TO CHANGE YOUR CAREER</li>
+              <li><%= link_to "UX Design", "https://careerfoundry.com/en/courses/become-a-ux-designer", target:"_blank" %></li>
+              <li><%= link_to "UI Design", "https://careerfoundry.com/en/courses/become-a-ui-designer", target:"_blank" %></li>
+              <li><%= link_to "Web Development", "https://careerfoundry.com/en/courses/become-a-web-developer", target:"_blank" %></li>
+              <li><%= link_to "IOS Development", "https://careerfoundry.com/en/courses/become-an-ios-developer", target:"_blank" %></li>
+              <li>COURSES TO BROADEN YOUR SKILL SET</li>
+              <li><%= link_to "UX Fundamentals", "https://careerfoundry.com/en/courses/ux-fundamentals", target:"_blank" %></li>
+              <li><%= link_to "Voice User Interface Design", "https://careerfoundry.com/en/courses/voice-user-interface-design-with-amazon-alexa", target:"_blank" %></li>
+              <li><%= link_to "UI for UX Designers", "https://careerfoundry.com/en/courses/ui-for-ux-designers", target:"_blank" %></li>
+              <li><%= link_to "Frontend Development for Designers", "https://careerfoundry.com/en/courses/frontend-development-for-designers", target:"_blank" %></li>
+            </ul> <!--dropdown menu-->
+          </li>
+          <li><%= link_to "How it works", "https://careerfoundry.com/en/how-it-works", target:"_blank" %></li>
+          <li><%= link_to "Testimonials", "https://careerfoundry.com/en/testimonials", target:"_blank" %></li>
+          <li><%= link_to "Blog", "#"%></li>
+        </ul><!-- nav -->
+
+        <ul class="nav navbar-nav navbar-right side">
+          <li><%= link_to "Sign in", "#"%></li>
+        </ul><!-- nav right -->
+
+      </div><!-- myNavbar -->
+    </div><!-- end container -->
+  </nav><!-- end navbar -->
+
+<%= yield %>
+
+  <footer class="container-fluid">
+    <div class="footer-content">
+      <div class="row">
+          <ul class="col-xs-6 col-md-3 links">
+            <li class="footer-title">COURSES TO CHANGE YOUR CAREER</li>
+            <li><%= link_to "UX Design", "https://careerfoundry.com/en/courses/become-a-ux-designer", target:"_blank" %></li>
+            <li><%= link_to "UI Design", "https://careerfoundry.com/en/courses/become-a-ui-designer", target:"_blank" %></li>
+            <li><%= link_to "Web Development", "https://careerfoundry.com/en/courses/become-a-web-developer", target:"_blank" %></li>
+            <li><%= link_to "IOS Development", "https://careerfoundry.com/en/courses/become-an-ios-developer", target:"_blank" %></li>
+            <li class="footer-title">COURSES TO BROADEN YOUR SKILL SET</li>
+            <li><%= link_to "UX Fundamentals", "https://careerfoundry.com/en/courses/ux-fundamentals", target:"_blank" %></li>
+            <li><%= link_to "Voice User Interface Design", "https://careerfoundry.com/en/courses/voice-user-interface-design-with-amazon-alexa", target:"_blank" %></li>
+            <li><%= link_to "UI for UX Designers", "https://careerfoundry.com/en/courses/ui-for-ux-designers", target:"_blank" %></li>
+            <li><%= link_to "Frontend Development for Designers", "https://careerfoundry.com/en/courses/frontend-development-for-designers", target:"_blank" %></li>
+          </ul>
+
+          <ul class="col-xs-6 col-md-3 links">
+            <li><%= link_to "About Us", "https://careerfoundry.com/en/about", target: "_blank" %></li>
+            <li><%= link_to "Job Guarantee", "https://careerfoundry.com/en/mentors", target: "_blank" %></li>
+            <li><%= link_to "Mentors", "https://careerfoundry.com/en/mentors", target: "_blank" %></li>
+            <li><%= link_to "For Business", "https://careerfoundry.com/en/business", target: "_blank" %></li>
+            <li><%= link_to "Media", "https://careerfoundry.com/en/media", target: "_blank" %></li>
+            <li><%= link_to "Work at CareerFoundry", "https://careerfoundry.com/en/jobs", target: "_blank" %></li>
+            <li><%= link_to "Become a Mentor", "https://careerfoundry.com/en/mentoring", target: "_blank" %></li>
+            <li><%= link_to "CareerHub", "https://careerfoundry.com/en/careerhub", target: "_blank" %></li>
+            <li><%= link_to "Hire our Grads", "https://careerfoundry.com/en/hire-our-grads", target: "_blank" %></li>
+          </ul>
+
+          <div class="col-xs-12 col-md-6 questions">
+            <div class="row form-title">
+              <%= image_tag ("olivia.png"), class: "img-responsive" %>
+              <div class="title-box">
+                <h3>Got Questions?</h3>
+                <h5>Ask Olivia</h5>
+              </div>
+            </div><!--form-title -->
+
+            <form>
+              <div class="row form-boxes">
+                <textarea class="form-control message-box box-borders" rows="4" cols="30" placeholder="Hi Olivia, I have a question regarding CareerFoundry courses"></textarea>
+              </div><!-- row -->
+
+              <div class="row form-boxes">
+                <input type="email" class="form-control anchor box-borders" cols="20" placeholder="My email address">
+                <button type="button" class="btn btn-default box-borders" data-dismiss="modal" >Ask Olivia</button>
+              </div><!--row-->
+
+              <div class="row">
+                <div class="connect col-xs-12 col-sm-6">
+                  <%= image_tag ("hearfrom.png") %>
+                  <p> Connect with a Career Adviser</p>
+                </div>
+
+                <ul class="media col-xs-12 col-sm-6">
+                  <li>
+                    <%= link_to "https://www.facebook.com/careerfoundry/", target: "_blank" do %>
+                    <%= image_tag "facelink.png", class:"image-on" %>
+                    <%= image_tag "facehover.png", class: "image-off" %>
+                    <% end %>
+                  </li>
+                  <li>
+                    <%= link_to "https://twitter.com/careerfoundry/", target: "_blank" do %>
+                    <%= image_tag "twitlink.png", class: "image-on" %>
+                    <%= image_tag "twithover.png", class: "image-off" %>
+                    <% end %>
+                  </li>
+                  <li>
+                    <%= link_to "https://www.instagram.com/career_foundry/" do %>
+                    <%= image_tag "instlink.png", class: "image-on" %>
+                    <%= image_tag "insthover.png", class: "image-off" %>
+                    <% end %>
+                  </li>
+                  <li>
+                    <%= link_to "https://www.youtube.com/user/careerfoundry" do %>
+                    <%= image_tag "youtlink.png", class: "image-on" %>
+                    <%= image_tag "youthover.png", class: "image-off" %>
+                    <% end %>
+                  </li>
+
+                </ul>
+              </div><!-- row -->
+
+            </form>
+          </div>
+        </div><!-- end row -->
+
+        <ul class="bottom links">
+          <li><%= link_to "TERMS OF SERVICE", "https://careerfoundry.com/en/terms", target:"_blank" %></li>
+          <li><%= link_to "PRIVACY POLICY", "https://careerfoundry.com/en/privacy", target:"_blank" %></li>
+          <li><%= link_to "IMPRINT", "https://careerfoundry.com/en/imprint", target:"_blank" %></li>
+        </ul>
+
+      </div>
+    </footer>
+
+</body>
 </html>
