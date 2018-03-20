@@ -10,8 +10,13 @@
     <input type="text" class="search-box hidden-xs" placeholder="Search">
   </div>
 
-  <div class="posts">
-    <div class="row">
+  <div class="row new-link">
+    <%= link_to 'New post', new_post_path(@post), class: "btn btn-primary" %>
+  </div>
+
+
+  <div class="row">
+    <div class="posts">
       <% @posts.each do |post| %>
         <%= render post %>
       <% end %>

@@ -34,3 +34,99 @@
 
   }/* card */
 }
+
+.post-info {
+  margin-top: 70px;
+  width: 70%;
+  text-align: center;
+  h1{
+    margin-top: 50px;
+    color: #333333;
+  }
+  p {
+    margin-top: 40px;
+    color: #333333;
+    text-align: justify;
+    font-family: Raleway;
+  }
+  .links {
+    border: none;
+    float: right;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    a{
+      color: black;
+      padding: 0 5px;
+    }
+    a:hover{
+      border-bottom: 2px solid #84e1da;
+    }
+  }
+}
+
+.create-post {
+  margin-top: 80px;
+  h1{
+    color: #333333;
+  }
+  .form-wrap {
+    float: left;
+    width: 50%;
+  }
+  .field{
+    margin-bottom: 20px;
+  }
+  label {
+    color:  #333333;
+  }
+  input, textarea {
+    padding: 5px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #5b5b5b;
+    color: black;
+  }
+  textarea{
+    height: 150px;
+  }
+  .actions{
+    border: none;
+    float: left;
+    margin-left: 25px;
+    margin-bottom: 15px;
+    input{
+      border-radius: 5px;
+      background-color: #233c4f;
+      border: none;
+      color: white;
+      font-weight: bold;
+      padding: 5px;
+    }
+    input:hover{
+      background-color: #84e1da;
+    }
+  }
+  .back{
+    margin-left: 5px;
+    a{
+      color: #233c4f;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a:hover{
+      border-bottom: 2px solid #84e1da;
+      color: #84e1da;
+    }
+  }
+}
+
+.new-link {
+  margin-left: 5px;
+  .btn {
+    border-radius: 10px;
+    background-color: #233c4f;
+  }
+  .btn:hover{
+    background-color: #84e1da;
+  }
+}
