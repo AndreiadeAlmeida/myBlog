@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MyBlog</title>
+  <title><%= yield(:page_title) %> | MyBlog</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
 
@@ -66,6 +66,15 @@
 
 <%= yield %>
 
+  <div class="jumbotron" id="footer">
+    <!--<%= image_tag "careeryouwant.jpg", class:"cf-background"%>-->
+    <div class="learn-more">
+      <%= image_tag "cflogo.jpg", class:"logo"%>
+      <h2>Build a Career You Love</h2>
+      <p>Online mentored courses to transform you career</p>
+      <button type="button" class="btn btn-danger">Learn More About CareerFoundry</button>
+    </div>
+  </div><!-- jumbotron -->
   <footer class="container-fluid">
     <div class="footer-content">
       <div class="row">
