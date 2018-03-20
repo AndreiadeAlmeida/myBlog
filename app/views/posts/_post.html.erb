@@ -1,0 +1,20 @@
+<div class="col-sm-6 col-lg-4">
+
+  <div class="card">
+    <div class="card-topper">
+      <%= image_tag(post.image_url, class: "img-responsive") %>
+    </div>
+
+    <div class="card-block title">
+      <h4 class="card-title"><%= link_to post.title, post %></h4>
+    </div>
+
+    <div class="card-block">
+      <p class="published-date"></p>
+      <p class="card-text"><%= truncate(post.description, length: 130) %></p>
+    </div>
+
+  <!--  <%= link_to 'Edit', edit_post_path(post), class: "btn btn-primary" %>
+  <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %> -->
+  </div>
+</div>
