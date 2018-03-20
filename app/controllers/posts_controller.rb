@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.most_recent
+    @posts = Post.all
   end
 
   # GET /posts/1
