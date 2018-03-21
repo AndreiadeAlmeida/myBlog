@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.limit(4)
+    @posts = Post.limit(@posts)
   end
 
   # GET /posts/1
