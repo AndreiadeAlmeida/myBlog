@@ -1,10 +1,35 @@
-<main class="container-fluid">
 
-  <header class="row">
+
+<header class="container-fluid">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!--Indicators -->
+    <ol class="carousel-indicators">
+      <% @posts.each_with_index do |post, index| %>
+      <li data-target="#myCarousel" data-slide-to="<%= index %>" class="<%= " active" if post == @posts.first %>"></li>
+      <% end %>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <% @posts.each do |post| %>
+      <div class="item<%= " active" if post == @posts.first %>">
+        <%= image_tag(post.image_url, class: "img-responsive")%>
+        <div class="carousel-caption">
+          <h2><%= post.title %></h2>
+          <br>
+          <%= link_to 'Read', post, class:'btn btn-carousel' %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div><!-- carousel -->
+</header>
+<main class="container">
+  <div class="row">
     <div class="main-header">
       <h2>CareerFoundry Blog</h2>
     </div>
-  </header>
+  </div>
 
   <div class="row top">
     <input type="text" class="search-box hidden-xs" placeholder="Search">
@@ -18,7 +43,7 @@
   <div class="row">
     <div class="posts">
       <% @posts.each do |post| %>
-        <%= render post %>
+      <%= render post %>
       <% end %>
     </div>
   </div>

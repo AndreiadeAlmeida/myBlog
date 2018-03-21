@@ -1,10 +1,35 @@
+header .carousel {
+  margin-left: -25px;
+  margin-right: -25px;
+  .img-responsive {
+    width: 100%;
+   }
+   .carousel-indicators {
+     li {
+       width: 15px;
+       height: 15px;
+       margin: 5px;
+       background-color: white;
+       border: none;
+     }
+     .active {
+       background-color: #df6f64;
+     }
+   }
 
-.create-post form {
-  padding: 10px;
-  text-align: left;
-  margin-left: auto;
-}
-
-.field {
-  color: black;
+   .carousel-caption {
+     margin-bottom: 40px;
+     .btn-carousel{
+       padding: 5px 50px;
+       color: white;
+       font-size: 18px;
+       font-weight: bold;
+       border-radius: 2px;
+       border: 1px solid #5c94a1;
+       background-color: #609dab;
+     }
+     .btn-carousel:hover {
+       background-color: #5c94a1;
+     }
+   }
 }
