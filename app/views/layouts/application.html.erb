@@ -117,62 +117,66 @@
             </div><!--form-title -->
 
             <form>
+              <%= flash[:notice] %>
+
+              <%= form_with(url:"/simple_pages/thank_you", method: "post", local: true) do |form| %>
               <div class="row form-boxes">
-                <textarea class="form-control message-box box-borders" rows="4" cols="30" placeholder="Hi Olivia, I have a question regarding CareerFoundry courses"></textarea>
-              </div><!-- row -->
-
+                <%= form.text_area :message, :required => true, class: "form-control message-box box-borders", placeholder: "Hi Olivia, I have a question regarding CareerFoundry courses", rows: 4, cols: 30 %>
+              </div>
               <div class="row form-boxes">
-                <input type="email" class="form-control anchor box-borders" cols="20" placeholder="My email address">
-                <button type="button" class="btn btn-default box-borders" data-dismiss="modal" >Ask Olivia</button>
-              </div><!--row-->
-
-              <div class="row">
-                <div class="connect col-xs-12 col-sm-6">
-                  <%= image_tag ("hearfrom.png") %>
-                  <p> Connect with a Career Adviser</p>
-                </div>
-
-                <ul class="media col-xs-12 col-sm-6">
-                  <li>
-                    <%= link_to "https://www.facebook.com/careerfoundry/", target: "_blank" do %>
-                    <%= image_tag "facelink.png", class:"image-on" %>
-                    <%= image_tag "facehover.png", class: "image-off" %>
-                    <% end %>
-                  </li>
-                  <li>
-                    <%= link_to "https://twitter.com/careerfoundry/", target: "_blank" do %>
-                    <%= image_tag "twitlink.png", class: "image-on" %>
-                    <%= image_tag "twithover.png", class: "image-off" %>
-                    <% end %>
-                  </li>
-                  <li>
-                    <%= link_to "https://www.instagram.com/career_foundry/" do %>
-                    <%= image_tag "instlink.png", class: "image-on" %>
-                    <%= image_tag "insthover.png", class: "image-off" %>
-                    <% end %>
-                  </li>
-                  <li>
-                    <%= link_to "https://www.youtube.com/user/careerfoundry" do %>
-                    <%= image_tag "youtlink.png", class: "image-on" %>
-                    <%= image_tag "youthover.png", class: "image-off" %>
-                    <% end %>
-                  </li>
-
-                </ul>
-              </div><!-- row -->
-
+                <%= form.text_field :email, :required => true, class: "form-control anchor box-borders", placeholder: "My email address", cols: 30 %>
+                <%= form.submit "Ask Olivia", class: "form_label btn btn-default box-borders" %>
+              </div>
+              <% end %>
             </form>
-          </div>
-        </div><!-- end row -->
 
-        <ul class="bottom links">
-          <li><%= link_to "TERMS OF SERVICE", "https://careerfoundry.com/en/terms", target:"_blank" %></li>
-          <li><%= link_to "PRIVACY POLICY", "https://careerfoundry.com/en/privacy", target:"_blank" %></li>
-          <li><%= link_to "IMPRINT", "https://careerfoundry.com/en/imprint", target:"_blank" %></li>
-        </ul>
+            <div class="row">
+              <div class="connect col-xs-12 col-sm-6">
+                <%= image_tag ("hearfrom.png") %>
+                <p> Connect with a Career Adviser</p>
+              </div>
 
-      </div>
-    </footer>
+              <ul class="media col-xs-12 col-sm-6">
+                <li>
+                  <%= link_to "https://www.facebook.com/careerfoundry/", target: "_blank" do %>
+                  <%= image_tag "facelink.png", class:"image-on" %>
+                  <%= image_tag "facehover.png", class: "image-off" %>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to "https://twitter.com/careerfoundry/", target: "_blank" do %>
+                  <%= image_tag "twitlink.png", class: "image-on" %>
+                  <%= image_tag "twithover.png", class: "image-off" %>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to "https://www.instagram.com/career_foundry/" do %>
+                  <%= image_tag "instlink.png", class: "image-on" %>
+                  <%= image_tag "insthover.png", class: "image-off" %>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to "https://www.youtube.com/user/careerfoundry" do %>
+                  <%= image_tag "youtlink.png", class: "image-on" %>
+                  <%= image_tag "youthover.png", class: "image-off" %>
+                  <% end %>
+                </li>
+
+              </ul>
+            </div><!-- row -->
+
+          </form>
+        </div>
+      </div><!-- end row -->
+
+      <ul class="bottom links">
+        <li><%= link_to "TERMS OF SERVICE", "https://careerfoundry.com/en/terms", target:"_blank" %></li>
+        <li><%= link_to "PRIVACY POLICY", "https://careerfoundry.com/en/privacy", target:"_blank" %></li>
+        <li><%= link_to "IMPRINT", "https://careerfoundry.com/en/imprint", target:"_blank" %></li>
+      </ul>
+
+    </div>
+  </footer>
 
 </body>
 </html>

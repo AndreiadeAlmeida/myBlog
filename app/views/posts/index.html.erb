@@ -1,11 +1,9 @@
-
-
 <header class="container-fluid">
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!--Indicators -->
     <ol class="carousel-indicators">
-      <% @posts.each_with_index do |post, index| %>
-      <li data-target="#myCarousel" data-slide-to="<%= index %>" class="<%= " active" if post == @posts.first %>"></li>
+      <% @posts.each_with_index do |post, i| %>
+      <li data-target="#myCarousel" data-slide-to="<%= i %>" class="<%= " active" if post == @posts.first %>"></li>
       <% end %>
     </ol>
 
@@ -32,7 +30,11 @@
   </div>
 
   <div class="row top">
-    <input type="text" class="search-box hidden-xs" placeholder="Search">
+    <%= form_with(url: posts_path, method: 'get', local: true) do |form| %>
+    <%= form.label :q, 'Search for:' %>
+    <%= form.text_field :q, id: 'q', class: "search-box hidden-xs", placeholder:"Search", value: params[:q] %>
+    <%= form.submit 'Search', style:"display:none" %>
+    <% end %>
   </div>
 
   <div class="row new-link">
