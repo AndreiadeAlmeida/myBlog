@@ -146,7 +146,7 @@ ul li {
 }
 
   /* === form === */
-form .form-boxes{
+form .form-group{
   display: flex;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -193,4 +193,8 @@ form .btn {
 }
 .media li:hover .image-off{
    display:block;
+}
+
+input {
+  color: black;
 }

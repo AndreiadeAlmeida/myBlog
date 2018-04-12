@@ -31,7 +31,7 @@
           <span class="icon-bar"></span>
         </button>
         <div class="navbar-brand">
-          <%= link_to "https://careerfoundry.com/en/home" do %>
+          <%= link_to home_path  do %>
           <%= image_tag "careerfoundry.png", class: "hidden-xs hidden-sm" %>
           <%= image_tag "cf.png", class: "visible-xs visible-sm" %>
           <% end %>
@@ -57,13 +57,23 @@
           </li>
           <li><%= link_to "How it works", "https://careerfoundry.com/en/how-it-works", target:"_blank" %></li>
           <li><%= link_to "Testimonials", "https://careerfoundry.com/en/testimonials", target:"_blank" %></li>
-          <li><%= link_to "Blog", "#"%></li>
+          <li><%= link_to "Blog", home_path %></li>
         </ul><!-- nav -->
 
-        <ul class="nav navbar-nav navbar-right side">
-          <li><%= link_to "Sign in", "#"%></li>
+        <div class="nav navbar-nav navbar-right side">
+          <% if user_signed_in? %>
+            <li>
+              <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to new_user_session_path do %>
+              <span class="glyphicon glyphicon-user"></span>
+              <span class="user-nav">Sign In</span>
+              <% end %>
+            </li>
+            <% end %>
         </ul><!-- nav right -->
-
       </div><!-- myNavbar -->
     </div><!-- end container -->
   </nav><!-- end navbar -->
@@ -120,11 +130,11 @@
               <%= flash[:notice] %>
 
               <%= form_with(url:"/simple_pages/thank_you", method: "post", local: true) do |form| %>
-              <div class="row form-boxes">
+              <div class="row form-group">
                 <%= form.text_area :message, :required => true, class: "form-control message-box box-borders", placeholder: "Hi Olivia, I have a question regarding CareerFoundry courses", rows: 4, cols: 30 %>
               </div>
-              <div class="row form-boxes">
-                <%= form.text_field :email, :required => true, class: "form-control anchor box-borders", placeholder: "My email address", cols: 30 %>
+              <div class="row form-group">
+                <%= form.text_field :email, type: "email", :required => true, class: "form-control anchor box-borders", placeholder: "My email address", cols: 30 %>
                 <%= form.submit "Ask Olivia", class: "form_label btn btn-default box-borders" %>
               </div>
               <% end %>
