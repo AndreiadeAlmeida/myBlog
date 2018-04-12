@@ -4,13 +4,13 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-  #   if params[:q]
-  #   search_term = params[:q]
-  #   @posts = Post.search(search_term)
-  # else
-  #   @posts = Post.all.paginate(page: params[:page], per_page: 5)
-  # end
-    @posts = Post.limit(@posts)
+    if params[:q]
+    search_term = params[:q]
+    @posts = Post.search(search_term)
+  else
+    @posts = Post.all
+   end
+  #  @posts = Post.limit(@posts)
   end
 
   # GET /posts/1
