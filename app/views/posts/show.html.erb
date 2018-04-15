@@ -8,9 +8,18 @@
   </div>
 
   <div class="row links">
-    <%= link_to 'Edit', edit_post_path(@post) %> |
     <%= link_to 'Back', posts_path %>
+    <% if signed_in? && current_user.admin? %>
+    <%= link_to 'Edit', edit_post_path(@post) %> |
     <%= link_to 'Remove', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
   </div>
 
+  <div class="row comments">
+    <div class="col-sm-12">
+      <%= render 'comments' %>
+      <hr>
+      <%= render 'new_comment' %>
+    </div>
+  </div>
 </div>

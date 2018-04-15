@@ -30,16 +30,18 @@
   </div>
 
   <div class="row top">
-    <%= form_with(url: posts_path, method: 'get', local: true) do |form| %>
+    <%= form_with(url:posts_path, method: 'get', local: true) do |form| %>
     <%= form.label :q, 'Search for:' %>
     <%= form.text_field :q, id: 'q', class: "search-box hidden-xs", placeholder:"Search", value: params[:q] %>
     <%= form.submit 'Search', style:"display:none" %>
     <% end %>
   </div>
-  
+
 
   <div class="row new-link">
+    <% if signed_in? && current_user.admin?%>
     <%= link_to 'New post', new_post_path(@post), class: "btn btn-primary" %>
+    <% end %>
   </div>
 
 

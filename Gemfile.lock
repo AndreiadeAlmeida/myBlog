@@ -43,6 +43,7 @@ GEM
     bindex (0.5.0)
     builder (3.2.3)
     byebug (10.0.0)
+    cancancan (2.2.0)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -170,12 +171,14 @@ GEM
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
+    will_paginate (3.1.6)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   byebug
+  cancancan (~> 2.0)
   coffee-rails (~> 4.2)
   devise
   jbuilder (~> 2.5)
@@ -192,6 +195,7 @@ DEPENDENCIES
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
+  will_paginate (~> 3.1.0)
 
 RUBY VERSION
    ruby 2.5.0p0

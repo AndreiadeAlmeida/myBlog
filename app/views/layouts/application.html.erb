@@ -19,6 +19,17 @@
 </head>
 
 <body>
+  <div class="container" id="alert">
+  <% if notice %>
+    <div class="alert alert-success" role="alert">
+      <p id="notice" class="alert"><%= notice %></p>
+    </div>
+  <% elsif alert %>
+    <div class="alert alert-danger" role="alert">
+      <p class="alert"><%= alert %></p>
+    </div>
+  <% end %>
+  </div>
   <!-- ========== -->
   <!-- ==navbar== -->
   <!-- ========== -->
@@ -126,10 +137,10 @@
               </div>
             </div><!--form-title -->
 
-            <form>
+
               <%= flash[:notice] %>
 
-              <%= form_with(url:"/simple_pages/thank_you", method: "post", local: true) do |form| %>
+              <%= form_with(url: 'simple_pages/thank_you', method: "get", local: true) do |form| %>
               <div class="row form-group">
                 <%= form.text_area :message, :required => true, class: "form-control message-box box-borders", placeholder: "Hi Olivia, I have a question regarding CareerFoundry courses", rows: 4, cols: 30 %>
               </div>
@@ -138,7 +149,7 @@
                 <%= form.submit "Ask Olivia", class: "form_label btn btn-default box-borders" %>
               </div>
               <% end %>
-            </form>
+
 
             <div class="row">
               <div class="connect col-xs-12 col-sm-6">

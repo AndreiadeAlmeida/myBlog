@@ -58,6 +58,9 @@ header .carousel {
     }
     .remember{
       font-size: 12px;
+      label {
+        color: #d0d2e0;
+      }
     }
     .actions{
       margin-top: 40px;
@@ -96,4 +99,21 @@ header .carousel {
 }
 .shared-link a {
   color: #d0d2e0;
+}
+
+/* ============== */
+/* ===comments==== */
+/* ============== */
+.post-comments {
+  padding: 5px;
+  em, .glyphicon {
+    color: #d0d2e0;
+  }
+}
+
+.new-comment {
+  margin-bottom: 10px;
+  h4 {
+    color: #d0d2e0;
+  }
 }

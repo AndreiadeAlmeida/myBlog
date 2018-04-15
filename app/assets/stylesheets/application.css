@@ -198,3 +198,7 @@ form .btn {
 input {
   color: black;
 }
+
+#alert {
+  position: fixed;
+}
