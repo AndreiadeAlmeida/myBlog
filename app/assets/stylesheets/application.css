@@ -199,6 +199,15 @@ input {
   color: black;
 }
 
+/* ============= */
+/* === ALERT === */
+/* ============= */
+
 #alert {
   position: fixed;
+}
+
+.notice,
+.alert {
+  padding: 5px;
 }

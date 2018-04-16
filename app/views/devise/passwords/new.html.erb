@@ -1,5 +1,5 @@
-<div class="container form-authentication">
 
+<div class="container form-authentication">
   <div class="row form-authentication-inner">
     <div class="form-heading text-center">
       <h2>Forgot your password?</h2>
@@ -7,7 +7,6 @@
 
     <div class="main-login">
       <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-        <%= devise_error_messages! %>
 
         <div class="input-group">
           <span class="input-group-addon">
@@ -15,6 +14,7 @@
           </span>
           <%= f.email_field :email, autofocus: true, class: "form-control", autocomplete: "email", placeholder: "Email address" %>
         </div>
+        <%= devise_error_messages! %>
 
         <div class="actions">
           <%= f.submit "Send me reset password instructions", class:"btn btn-primary btn-lg btn-block login-button reset" %>
